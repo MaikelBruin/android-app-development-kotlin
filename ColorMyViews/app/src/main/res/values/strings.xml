@@ -5,4 +5,9 @@
     <string name="box_three_text">Box Three</string>
     <string name="box_four_text">Box Four</string>
     <string name="box_five_text">Box Five</string>
+    <string name="label_text">This is a game!</string>
+    <string name="info_text">Click the screen to change colors!</string>
+    <string name="red_button_text">Red</string>
+    <string name="yellow_button_text">Yellow</string>
+    <string name="green_button_text">Green</string>
 </resources>
