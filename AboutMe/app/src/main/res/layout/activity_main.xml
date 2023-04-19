@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/name_text"
@@ -13,6 +14,36 @@
         android:layout_marginTop="@dimen/layout_margin"
         android:text="@string/name"
         android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/nickname_edit"
+        style="@style/NameStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/what_is_your_nickname"
+        android:importantForAutofill="no"
+        android:inputType="text|textPersonName|textImeMultiLine"
+        android:minHeight="48dp"
+        android:text="@string/edit_text"
+        android:textAlignment="center" />
+
+    <Button
+        android:id="@+id/done_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/done_button_text" />
+
+    <TextView
+        android:id="@+id/nickname_text"
+        style="@style/NameStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/what_is_your_nickname"
+        android:textAlignment="center"
+        android:visibility="invisible"
+        tools:visibility="invisible" />
 
     <ImageView
         android:id="@+id/star_image"
@@ -27,11 +58,12 @@
         android:layout_height="match_parent">
 
         <TextView
-            style="@style/NameStyle"
-            android:lineSpacingMultiplier="1.2"
             android:id="@+id/bio_text"
+            style="@style/NameStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:lineSpacingMultiplier="1.2"
             android:text="@string/bio" />
     </ScrollView>
+
 </LinearLayout>
