@@ -7,6 +7,10 @@ android {
     namespace 'com.example.aboutme'
     compileSdk 33
 
+    dataBinding {
+        enabled = true
+    }
+
     defaultConfig {
         applicationId "com.example.aboutme"
         minSdk 19
