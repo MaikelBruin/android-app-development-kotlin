@@ -32,7 +32,7 @@ class TitleFragment : Fragment() {
             container,
             false
         )
-        binding.playButton.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_titleFragment2_to_gameFragment))
+        binding.playButton.setOnClickListener(Navigation.createNavigateOnClickListener(TitleFragmentDirections.actionTitleFragment2ToGameFragment().actionId))
         setHasOptionsMenu(true)
         return binding.root
     }
