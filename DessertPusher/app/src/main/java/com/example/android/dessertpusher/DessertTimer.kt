@@ -78,4 +78,9 @@ class DessertTimer(lifecycle: Lifecycle) : LifecycleObserver {
         // timer
         handler.removeCallbacks(runnable)
     }
+
+    @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
+    fun saveTimer() {
+
+    }
 }
