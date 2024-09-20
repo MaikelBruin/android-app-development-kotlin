@@ -53,7 +53,6 @@ class ScoreFragment : Fragment() {
         // Get args using by navArgs property delegate
         val scoreFragmentArgs by navArgs<ScoreFragmentArgs>()
         binding.scoreText.text = scoreFragmentArgs.score.toString()
-        binding.playAgainButton.setOnClickListener { onPlayAgain() }
 
         scoreViewModelFactory = ScoreViewModelFactory(scoreFragmentArgs.score)
         viewModel = ViewModelProviders.of(this, scoreViewModelFactory).get(ScoreViewModel::class.java)
@@ -64,7 +63,7 @@ class ScoreFragment : Fragment() {
 
         viewModel.eventPlayAgain.observe(this, Observer { willPlayAgain ->
             if (willPlayAgain) {
-                onPlayAgain()
+                findNavController().navigate(ScoreFragmentDirections.actionRestart())
                 viewModel.onPlayAgainEventCompleted()
             }
         })
@@ -74,8 +73,4 @@ class ScoreFragment : Fragment() {
         return binding.root
     }
 
-    //TODO: Move this method to viewModel?
-    private fun onPlayAgain() {
-        findNavController().navigate(ScoreFragmentDirections.actionRestart())
-    }
 }
