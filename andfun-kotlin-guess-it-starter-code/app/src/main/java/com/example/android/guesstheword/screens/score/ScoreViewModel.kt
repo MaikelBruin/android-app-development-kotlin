@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.navigation.fragment.findNavController
 
 class ScoreViewModel(finalScore: Int) : ViewModel() {
     // The score

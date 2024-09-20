@@ -33,7 +33,7 @@ import com.example.android.guesstheword.databinding.ScoreFragmentBinding
  * Fragment where the final score is shown, after the game is over
  */
 class ScoreFragment : Fragment() {
-    private lateinit var scoreViewModel: ScoreViewModel
+    private lateinit var viewModel: ScoreViewModel
     private lateinit var scoreViewModelFactory: ScoreViewModelFactory
 
     override fun onCreateView(
@@ -56,22 +56,25 @@ class ScoreFragment : Fragment() {
         binding.playAgainButton.setOnClickListener { onPlayAgain() }
 
         scoreViewModelFactory = ScoreViewModelFactory(scoreFragmentArgs.score)
-        scoreViewModel = ViewModelProviders.of(this, scoreViewModelFactory).get(ScoreViewModel::class.java)
+        viewModel = ViewModelProviders.of(this, scoreViewModelFactory).get(ScoreViewModel::class.java)
 
-        scoreViewModel.score.observe(this, Observer { newScore ->
+        viewModel.score.observe(this, Observer { newScore ->
             binding.scoreText.text = newScore.toString()
         })
 
-        scoreViewModel.eventPlayAgain.observe(this, Observer { willPlayAgain ->
+        viewModel.eventPlayAgain.observe(this, Observer { willPlayAgain ->
             if (willPlayAgain) {
                 onPlayAgain()
-                scoreViewModel.onPlayAgainEventCompleted()
+                viewModel.onPlayAgainEventCompleted()
             }
         })
+
+        binding.scoreViewModel = viewModel
 
         return binding.root
     }
 
+    //TODO: Move this method to viewModel?
     private fun onPlayAgain() {
         findNavController().navigate(ScoreFragmentDirections.actionRestart())
     }
