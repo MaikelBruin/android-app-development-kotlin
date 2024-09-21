@@ -19,9 +19,7 @@ package com.example.android.trackmysleepquality.sleeptracker
 import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.viewmodel.CreationExtras
 import com.example.android.trackmysleepquality.database.SleepDatabaseDao
-import kotlin.reflect.KClass
 
 /**
  * This is pretty much boiler plate code for a ViewModel Factory.
@@ -32,7 +30,7 @@ class SleepTrackerViewModelFactory(
     private val dataSource: SleepDatabaseDao,
     private val application: Application
 ) : ViewModelProvider.Factory {
-    @Suppress("UNCHECKED_CAST")
+    @Suppress("unchecked_cast")
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(SleepTrackerViewModel::class.java)) {
             return SleepTrackerViewModel(dataSource, application) as T
