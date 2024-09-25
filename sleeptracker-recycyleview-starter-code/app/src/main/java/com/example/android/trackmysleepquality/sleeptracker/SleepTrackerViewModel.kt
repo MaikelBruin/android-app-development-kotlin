@@ -85,6 +85,7 @@ class SleepTrackerViewModel(
         it.isNotEmpty()
     }
 
+
     /**
      * Request a toast by setting this value to true.
      *
