@@ -18,6 +18,7 @@
 package com.example.android.marsrealestate.overview
 
 import android.os.Bundle
+import android.provider.ContactsContract.Contacts.Photo
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
@@ -47,12 +48,13 @@ class OverviewFragment : Fragment() {
      */
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View {
-        val binding = GridViewItemBinding.inflate(inflater)
+        val binding = FragmentOverviewBinding.inflate(inflater)
 
         // Allows Data Binding to Observe LiveData with the lifecycle of this Fragment
         binding.lifecycleOwner = this
 
         // Giving the binding access to the OverviewViewModel
+        binding.photosGrid.adapter = PhotoGridAdapter()
         binding.viewModel = viewModel
 
         setHasOptionsMenu(true)
