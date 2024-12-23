@@ -30,9 +30,8 @@
                 android:layout_height="wrap_content"
                 android:padding="@dimen/spacing_normal"
                 app:singleLine="true"
-                app:singleSelection="true">
+                app:singleSelection="true" />
 
-            </com.google.android.material.chip.ChipGroup>
 
         </HorizontalScrollView>
 
