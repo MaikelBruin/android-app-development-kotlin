@@ -38,7 +38,7 @@
                 android:layout_marginStart="@dimen/spacing_normal"
                 android:layout_marginEnd="@dimen/spacing_normal"
                 android:text="@{chapter.name}"
-                app:layout_constraintStart_toEndOf="@+id/gdg_image"
+                app:layout_constraintStart_toStartOf="@+id/gdg_image"
                 app:layout_constraintEnd_toEndOf="parent"
                 tools:text="GDG Mountain View is really long so it will wrap in tools"
                 android:textAppearance="?textAppearanceHeadline6"
